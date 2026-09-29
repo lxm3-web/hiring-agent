@@ -17,3 +17,10 @@
 - 「C0xx 為什麼 3 分」→ 讀 outbox 評分表直接答
 
 公司、職缺、八位候選人皆虛構。今天以 2026-09-22 為基準。
+
+## 啟動程序（每次開工先做，做完才處理指示）
+1. 資料在 `data/`（repo 內建，尚未接雲端 Sheet）。
+2. 讀 `memory/MEMORY.md`（索引）→ 依索引讀相關記憶檔，再讀 `memory/CONVERSATION_LOG.md` 最上面幾筆：上次做到哪、人怎麼糾正過。
+3. 用 `knowledge/` 的規則與 `.claude/skills/` 的技能做事（本 Agent 自備：interview-kit-builder）。技能是判斷框架，不取代上面的鐵律。
+4. 收工前：把「這次學到、下次要記」寫進 `memory/`（被糾正一次就寫，同一件事不准讓人講第二次），並在 `memory/CONVERSATION_LOG.md` 最上面加一筆。`log/hiring_log.md` 是每次產出的流水帳，不等於記憶。
+5. **demo 歸零只清 `outbox/`、`log/` 與資料快照，不清 `memory/`、`knowledge/`、`.claude/`**。
